@@ -49,7 +49,10 @@ module.exports = {
             const rol = interaction.guild.roles.cache.get(ficha);
 
             if(channel.id === "1049538187703369785" || channel.id === "1100301375436488795"){
-                if(guildMember.roles.cache.some(role => role.name === 'ADMIN' || 'admin' || 'moderadores' || 'Profe')){
+                if(guildMember.roles.cache.some(role => role.name === 'ADMIN') || 
+                   guildMember.roles.cache.some(role => role.name === 'admin') || 
+                   guildMember.roles.cache.some(role => role.name === 'moderadores') || 
+                   guildMember.roles.cache.some(role => role.name === 'Profe')){
                     return interaction.reply({ content: `No se puede modificar a las personas con este rol.`, ephemeral: true})
                 }else{
                     guildMember.roles.add(rol);
